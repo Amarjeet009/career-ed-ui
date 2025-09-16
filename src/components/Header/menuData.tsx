@@ -1,11 +1,5 @@
 
 const menuData = [
-//   {
-//     id: 1,
-//     title: "Home",
-//     path: "/",
-//     newTab: false,
-//  },
    {
     id: 2,
     title: "Self-study Classes",
@@ -14,8 +8,40 @@ const menuData = [
       {
         id: 21,
         title: "Maths",
-        path: "/maths",
+        // path: "/maths",
         newTab: false,
+        submenu:[
+          {
+            id:211,
+            path: "/class-8",
+            title:"Class 8",
+          },
+          {
+            id:212,
+            path: "/class-9",
+            title:"Class 9",
+          },
+          {
+            id:213,
+            path: "/class-10",
+            title:"Class 10",
+          },
+          {
+            id:214,
+            path: "/class-11",
+            title:"Class 11",
+          },
+          {
+            id:215,
+            path: "/class-12",
+            title:"Class 12",
+          },
+          {
+            id:216,
+            path: "/iit-jee",
+            title:"IIT - JEE",
+          }
+        ]
       },
       {
         id: 22,

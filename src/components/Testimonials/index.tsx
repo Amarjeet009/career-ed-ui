@@ -70,7 +70,7 @@ const Testimonials = () => {
     }
   ];
 
-   const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
 
   const totalPages = Math.ceil(testimonials.length / testimonialsPerPage);
   const startIndex = (currentPage - 1) * testimonialsPerPage;
@@ -79,7 +79,7 @@ const Testimonials = () => {
 
 
   return (
-   <section id="testimonials" className="py-16 md:py-20 lg:py-28">
+    <section id="testimonials" className="py-16 md:py-20 lg:py-28">
       <div className="container">
         <h2 className="text-2xl font-bold mb-8 text-gray-900 dark:text-white">What Our Users Say</h2>
 
@@ -95,7 +95,7 @@ const Testimonials = () => {
                 />
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                     {item.name}
+                    {item.name}
                   </h3>
                   <p className="text-sm text-gray-500 dark:text-gray-400">{item.role}</p>
                 </div>
@@ -127,43 +127,42 @@ const Testimonials = () => {
         </div>
 
         {/* Pagination Controls */}
-      <div className="mt-8 flex justify-center gap-4 items-center flex-wrap">
-  {/* Previous Button */}
-  <button
-    onClick={() => setCurrentPage(p => Math.max(p - 1, 1))}
-    disabled={currentPage === 1}
-    className="px-4 h-10 rounded-full text-sm font-medium transition-colors duration-200 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white disabled:opacity-50"
-  >
-    Previous
-  </button>
+        <div className="mt-8 flex justify-center gap-4 items-center flex-wrap">
+          {/* Previous Button */}
+          <button
+            onClick={() => setCurrentPage(p => Math.max(p - 1, 1))}
+            disabled={currentPage === 1}
+            className="px-4 h-10 rounded-full text-sm font-medium transition-colors duration-200 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white disabled:opacity-50"
+          >
+            Previous
+          </button>
 
-  {/* Numbered Buttons */}
-  <div className="flex gap-2">
-    {[...Array(totalPages)].map((_, i) => (
-      <button
-        key={i}
-        onClick={() => setCurrentPage(i + 1)}
-        className={`px-4 h-10 rounded-full text-sm font-medium transition-colors duration-200 ${
-          currentPage === i + 1
-            ? 'bg-blue-600 text-white'
-            : 'bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white'
-        }`}
-      >
-        {i + 1}
-      </button>
-    ))}
-  </div>
+          {/* Numbered Buttons */}
+          <div className="flex gap-2">
+            {[...Array(totalPages)].map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrentPage(i + 1)}
+                className={`px-4 h-10 rounded-full text-sm font-medium transition-colors duration-200 ${currentPage === i + 1
+                    ? 'bg-blue-600 text-white'
+                    : 'bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white'
+                  }`}
+              >
+                {i + 1}
+              </button>
+            ))}
+          </div>
 
-  {/* Next Button */}
-  <button
-    onClick={() => setCurrentPage(p => Math.min(p + 1, totalPages))}
-    disabled={currentPage === totalPages}
-    className="px-4 h-10 rounded-full text-sm font-medium transition-colors duration-200 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white disabled:opacity-50"
-  >
-    Next
-  </button>
-</div>
-</div>
+          {/* Next Button */}
+          <button
+            onClick={() => setCurrentPage(p => Math.min(p + 1, totalPages))}
+            disabled={currentPage === totalPages}
+            className="px-4 h-10 rounded-full text-sm font-medium transition-colors duration-200 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white disabled:opacity-50"
+          >
+            Next
+          </button>
+        </div>
+      </div>
     </section>
 
   );
